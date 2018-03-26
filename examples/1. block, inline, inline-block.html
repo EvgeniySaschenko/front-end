@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+	<style>
+		.block_1{
+			height: 200px;
+			background: red;
+		}
+
+		.block_2{
+			height: 200px;
+			width: 300px;
+			background: yellow;
+		}
+
+		.block_3{
+			height: 200px;
+			width: 300px;
+			background: green;
+		}
+
+		.inline_1{
+			height: 200px;
+			width: 300px;
+			background: red;
+		}
+
+		.inline_2{
+			background: yellow;
+		}
+
+		.inline_3{
+			background: green;
+		}
+
+		.inline-block_1{
+			background: red;
+			height: 200px;
+			width: 300px;
+			display: inline-block;
+		}
+
+		.inline-block_2{
+			background: yellow;
+			display: inline-block;
+		}
+
+		.inline-block_3{
+			background: green;
+			display: inline-block;
+		}
+
+	</style>
+	<!--
+		1. Блочные элементы это элементы у которых display: block; - они занимают всю доступную ширину, можно задавать ширину и высоту элемента
+		Представители: div, p, header, footer, main, h1....
+		В блочный элемент могут владываться другие элементы с любым display, исключением являеться H1-H6 - в них не могут вкладываться блочные элементы
+	-->
+
+	<h2>1. block - занимают всю доступную ширину (блоки будут выстраиватся один под другим)</h2>
+
+	<div class="block_1">
+		Этот DIV занимает 100% доступной ширины - потому что у него display: block;
+	</div>
+
+	<div class="block_2">
+		Этому элементу задана ширина в 300px но элемент который идёт после него не становится в одну строку - потому что фактически они занимает всю доступную ширину
+	</div>
+
+	<div class="block_3">
+
+	</div>
+
+	<!--
+		2. Строчные элементы это элементы у которых display: inline; - их ширина и высота определяеться шириной содержымого, нельзя задавать ширину и высоту элемента, но IMG исключение
+		Представители: span, img, a, i, b...
+		В строчный элемент могут владываться другие элементы с display: inlune или inline-block, элементы block - нельзя
+	-->
+
+	<h2>2. inline - ширина и высота определяется контентом (строчные элементы будут выстраиватся вряд - поведение как у строк)</h2>
+
+	<span class="inline_1">
+			Этой строке заданы height: 200px; width: 300px; - но это не сработает при display: inline;
+	</span>
+
+	<span class="inline_2">
+		'строка 2'
+	</span>
+
+	<span class="inline_3">
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi numquam voluptate, assumenda ratione sequi ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi numquam voluptate, assumenda ratione sequi ea!
+	</span>
+
+
+	<!--
+		3. Строко-блочные элементы это элементы у которых display: inline-block; - их ширина определяеться шириной содержымого, но в отличии от inline ширину и высоту элемента можно задавать через CSS
+		Представители: незнаю, display задаётся через CSS
+		В строrj-блочный элемент могут владываться элементы с любым display
+	-->
+
+	<h2>3. inline-block - ширина и высота определяется контентом, но можно менять через CSS (строко-блочные элементы будут выстраиватся вряд - но только в том случае если ширина элемента это позволяет)</h2>
+
+	<span class="inline-block_1">
+			Этой строке заданы height: 200px; width: 300px; и это сработает т.к. у элемента display: inline-block;
+	</span>
+
+	<span class="inline-block_2">
+		Обрати внимание! Что этот элемент стал в одну строку с красным - с блочным бы так не сработало
+	</span>
+
+	<span class="inline-block_3">
+		<b>Обрати внимание что данный элемент не встал в один ряд с другими элементами - потому что не позволяет ширина</b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi numquam voluptate, assumenda ratione sequi ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi numquam voluptate, assumenda ratione sequi ea!
+	</span>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+	<style>
+		.box_red{
+			width: 350px;
+			height: 350px;
+			background: red;
+		}
+
+		.box_green{
+			width: 250px;
+			height: 250px;
+			background: green;
+		}
+
+		.box_green.margin{
+			margin-left: 50px;
+			margin-top: 50px;
+		}
+
+		.box_red.border{
+			border: 1px solid #000;
+		}
+	</style>
+	<!--
+		1. margin - устанавливает величину отступа от каждого края элемента
+	-->
+	<h2>1. margin - устанавливает величину отступа от каждого края элемента</h2>
+	<h3>1.1 Отступы</h3>
+
+	<b>	шаг 1 </b>
+	<div class="box_red">
+		<div class="box_green">
+			по умолчанию зелёный квадрат в верхнем левом углу
+		</div>
+	</div>
+	
+	<b>	шаг 2 </b>
+	<div class="box_red">
+		<div class="box_green margin">
+				зелёному квадрату заданы:<br>
+				margin-left: 50px;<br>
+				margin-top: 50px;<br>
+				казалось бы зелёный квадрат должен оттолкнутся от верхнего края и над ним появится красное пространство (как это произошло слева) - но он оттолкнулся от соседнего элементы сверху
+				<b> чтобы решить эту проблему - нужно красному квадрату добавить рамку</b>
+		</div>
+	</div>
+
+	<b>	шаг 3 </b>
+	<div class="box_red border">
+		<div class="box_green margin">
+				красному квадрату добавлена рамка
+		</div>
+	</div>
+
+	<h3>1.2 Выравнивание по центру</h3>
+	<style>
+			.box_center{
+				width: 350px;
+				height: 350px;
+				background: red;
+				margin: 40px auto;
+				/*
+					запись эквивалентна этой:
+					margin-top: 40px; - это значение может быть любым
+					margin-bottom: 40px; - это значение может быть любым
+					margin-left: auto;
+					margin-right: auto;
+				*/
+			}
+	</style>
+	
+	<div class="box_center">
+		Этот элемент выравнян по центру потому что для его правой и левой стороны значение margin заданы как auto.<br>
+		<b>Хочу обратить внимание что с помощь margin нельзя выравнять элементы по центру у которых display: inline или inline-block</b>
+
+	</div>
+
+	<h3>1.3 Схлопывания margin</h3>
+
+	
+	<style>
+			.box_left{
+				display: inline-block;
+				width: 350px;
+				height: 350px;
+				background: red;
+				margin-right: 100px;
+			}
+
+			.box_right{
+				display: inline-block;
+				width: 350px;
+				height: 350px;
+				background: green;
+				margin-left: 200px;
+			}
+
+			.box_top{
+				width: 350px;
+				height: 350px;
+				background: red;
+				margin-bottom: 100px;
+			}
+
+			.box_bottom{
+				width: 350px;
+				height: 350px;
+				background: green;
+				margin-top: 200px;
+			}
+	</style>
+
+	<div> <b>Шаг 1</b> </div>
+	<div> Разстояние между этими двумя элементами 300px (margin-right + margin-left) - здесь никакого схлопыванья не происходит - для левого и правого margin такого понятия нет</div>
+
+	<div class="box_left">
+		этому элементу задан<br>
+		 margin-right: 100px;
+	</div>
+
+	<div class="box_right">
+			этому элементу задан<br>
+			margin-left: 200px;
+	</div>
+	
+	<div> <b>Шаг 2</b> </div>
+	<div> Разстояние между этими двумя элементами будет 200px, потому что верхний и нижний margin не сумируются, а накладуются друг на друга - это называеться схлопыванием - т.е. растоянием будет наибольший margin</div>
+
+
+	<div class="box_top">
+			этому элементу задан<br>
+			 margin-bottom: 100px;
+		</div>
+	
+	<div class="box_bottom">
+			этому элементу задан<br>
+			margin-top: 200px;
+	</div>
+
+	<!--
+		2. padding - устанавливает величину внутри элемента
+	-->
+
+	<h2>2. padding - устанавливает величину отступов от краёв элемента</h2>
+
+	<style>
+			.box-padding_red-no{
+				background: red;
+			}
+
+			.box-padding_green{
+				background: green;
+				padding: 15px;
+				/*
+					еквивалентно такой записи:
+					padding-left: 15px;
+					padding-right: 15px;
+					padding-top: 15px;
+					padding-bottom: 15px;
+				*/
+			}
+
+
+			.box-padding_red-2{
+				height: 300px;
+				width: 300px;
+				background: red;
+				padding: 15px;
+			}
+
+			.box-padding_green-2{
+				height: 300px;
+				width: 300px;
+				box-sizing: border-box;
+				background: green;
+				padding: 15px;
+			}
+
+			.button_margin{
+				margin: 15px;
+				display: inline-block;
+			}
+
+			.button_padding{
+				padding: 15px;
+				display: inline-block;
+			}
+
+	</style>
+
+	<h3>2.1 Отступы padding - внутри элемента появятся отступы от его краёв</h3>
+	<span class="box-padding_red-no"> Нет padding </span>
+	<span class="box-padding_green"> padding: 15px; </span>
+
+	<h3>2.2 box-sizing: border-box; - это свойство необходимо чтобы размер контейнера не менялся когда ему задают padding</h3>
+	<div class="box-padding_red-2"> padding: 15px; <br> без box-sizing <br> квадрат со всех сторон увеличился на 15px </div>
+	<div class="box-padding_green-2"> padding: 15px; <br> c box-sizing, квадрат остался 300*300</div>
+
+
+	<h3>2.3 Чем отличаеться padding и margin?</h3>
+	<div> Кнопка которой задан margin: 15px; имеет отступы вокруг себя </div>
+	<div> Кнопка которой задан padding: 15px; имеет отступы внутри себя </div>
+
+	<button class="button_margin">Кнопка margin</button>
+	<button class="button_padding">Кнопка padding</button>
+
+	<div> Иногда бывают ситуации когда примение margin и padding дадут одинаковый визуальный эффект </div>
+
+	<div class="button_margin">Кнопка margin</div>
+	<div class="button_padding">Кнопка padding</div>
+
+</body>
+</html>
