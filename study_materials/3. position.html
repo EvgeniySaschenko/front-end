@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Position</title>
+</head>
+<body>
+	<style>
+		.square{
+			height: 200px;
+			width: 200px;
+			padding: 10px;
+		}
+		/* relative */
+		.square_1{
+			background-color: green;
+		}
+
+		.square_2{
+			position: relative;
+			left: 100px;
+			top: 30px;
+			background-color: red;
+		}
+
+		.square_3{
+			background-color: yellow;
+			position: relative;
+			top: 20px;
+			left: -40px;
+			padding-left: 35px;
+		}
+
+		/* absolute */
+		.square_4{
+			background-color: yellow;
+			position: absolute;
+			top: 120px;
+			right: 80px;
+		}
+
+		.square_5{
+			background-color: red;
+			position: relative;
+			height: 300px;
+			width: 300px;
+		}
+
+		.square_6{
+			background-color: green;
+			position: absolute;
+			top: 40px;
+			left: 40px;
+		}
+
+		.square_7{
+			background-color: green;
+			position: fixed;
+			bottom: 0;
+			right: 0;
+		}
+
+	</style>
+
+	<h2>1. position: relative;</h2>
+	<div>
+			relative - это относительное позиционирование, объект смещаеться относительно своего нормального положения, <b> при этом другие элементы думают что он там остался и на его место не становятся, а он может накладыватся на другие элементы</b>><br>
+			Для перемещения объекта используются свойства top, bottom, left, right.<br>
+			Чтобы просто переместить элемент используеться не часто, но в комбинации с position: absolute - часто
+	</div>
+
+	<div class="square square_1">
+		квадрат без position никуда не сместился
+	</div>
+
+	<div class="square square_2">
+			квадрат c relative<br>
+			left: 100px;<br>
+			top: 30px;<br>
+			он сместился на 100px в право, и 30px в низ относительно своего нормального положения
+	</div>
+
+	<div class="square square_3">
+			квадрат c relative<br>
+			left: -40px;<br>
+			top: 20px;<br>
+			элемент с отрицательным position может выйти за пределы своего родителя, в данном случае это body.<br>
+			этот квадрат сдвинулся на 40px за пределы экрана<br>
+			такое применяеться в слайдерах
+	</div>
+
+	<h2>2. position: absolute;</h2>
+	<div>
+			absolute - это абсобютное позиционирование, объект смещаеться относительно СВОЕГО ПРЕДКА С POSITION, если такого предка нет то позиционируеться от body<br>
+			Другие элементы не знают о его существовании и могут становится на его место <br>
+			Часто используеться в комбинации в position: relative; и z-index, примеры примения: модальные окна, слайдеры, наложения фона, <a href="http://playmus.cc/">перемотка трека</a>
+	</div>
+
+	<div class="square square_4">
+			<b>смотри когда дойдёшь до 2-го пункта</b><br>
+			квадрат c absolute<br>
+			right: 80px;<br>
+			top: 50px;<br>
+			поскольку у него нет родителя с каким нибудь position, элемен сместился относительно body в лево на 50px, вниз на 80px
+	</div>
+
+	<div class="square square_5">
+			текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст 
+			<div class="square square_6">
+					квадрат c absolute<br>
+					left: 40px;<br>
+					top: 40px;<br>
+					этот квадрат сместился на 40px вправо и в верх, отосительно своего предка с relative <br>
+					пример в <a href="http://playmus.cc/">перемотке трека</a> т.к. там нужно чтобы шкала прогресса не выталкивала название песни, поскольку absolute невидим для других - этого не происходит
+			</div>
+	</div>
+
+</body>
+</html>
+
+<h2>3. position: fixed;</h2>
+<div>
+		fixed - позиционирование элементы происходит относительно окна браузера, такое нужно чтобы элемент всегда оставался на одном месте, даже при прокрутке страницы<br>
+		Другие элементы не знают о его существовании и могут становится на его место <br>
+		Часто используеться для фиксации <a href="https://evgeniysaschenko.github.io/mondaystydio/">меню сайта / кнопки бургер</a>, модальных окон, <a href="http://playmus.cc/">плеера</a>
+</div>
+
+
+<div class="square square_7">
+		квадрат c fixed<br>
+		right: 0;<br>
+		bottom: 0;<br>
+		этот квадрат прикреплён к нижнему-правому краю окна и будет перемещатся при прокрутке<br>
+</div>
+
+<h1><a href="https://youtu.be/Vgw92hZcjas?t=2581">Посмотри этот видос пока он про позиционирование рассказывает</a></h1>
