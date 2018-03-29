@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+		<style>
+			.box{
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			.box_1{
+				text-align: center;
+			}
+
+			.box_2{
+				margin: 0 auto;
+			}
+
+			.box_3{
+				height: 150px;
+				line-height:  150px;
+				background: green;
+			}
+
+			.nav{
+				text-align: center;
+				background: gray;
+				margin: 0 auto;
+				width: 800px;
+			}
+
+			.nav__item{
+				display: inline-block;
+				background: gold;
+				padding: 15px;
+			}
+
+			.nav__item_top{
+				vertical-align: top;
+			}
+
+			.nav__item_center{
+				vertical-align: middle;
+			}
+			
+
+		</style>
+		<h2>
+				1. text-align - выравнивание по центру <i> горизонтали. </i><br>
+		</h2>
+		<div>
+				выравниваются элементы с display: block | inline-block; внутри контейнера, но не сам контейнер<br>
+		</div>
+		<div class="box box_1">
+				text-align: center;
+		</div>
+
+		<h2>2. margin - выравнивание контейнера по центру, по <i>горизонтали</i></h2>
+		<div>
+				вырвниваеться сам контейнер, но не содержымое,  элементы с display: block | inline-block - так выровнять не получится
+		</div>
+		<div class="box box_2">
+				margin: 0 auto;
+		</div>
+
+		<h2>3. line-height - вертикальное выравниванье по центру</h2>
+		<div>
+				этот способ можно использовать для вертикального выравниванья по центру, для одной строки или картинки
+		</div>
+		<div class="box box_3">
+						line-height  
+		</div>
+
+		<h2>4. padding - такое часто применяеться для кнопок</h2>
+		<div>
+			кнопке не задаются размеры - всё получаеться за счёт padding и font-size, одинаковый padding выравнивает текст по центру<br>
+			кнопки внутри контейнера выровняны с помощью text-align: center; т.к. они display: inline-block<br>
+			caм контейнер выровнян через margin: 0 auto; т.к. он display: block <br>
+		</div>
+		<div class="nav">
+				<div class="nav__item">Меню 1</div>
+				<div class="nav__item">Меню 2</div>
+				<div class="nav__item">Меню 3</div>
+				<div class="nav__item">Меню 4</div>
+		</div>
+
+		<h2>5. inline-block и <a href="http://htmlbook.ru/css/vertical-align"> vertical-align </a> - как выравниваются блоки с inline-block если в них разное количество текста?</h2>
+		<h3>Шаг 1</h3>
+		<div>
+			Если количество строк в одном из блоков отличаеться, то остальные блоки будут выровняны по умолчанию по baseline - в нашем случае по 3-й строке
+		</div>
+		<div class="nav">
+				<div class="nav__item">Меню 1</div>
+				<div class="nav__item">Меню 2<br>еще текст<br> и еще текст</div>
+				<div class="nav__item">Меню 3</div>
+				<div class="nav__item">Меню 4</div>
+		</div>
+
+		<h3>Шаг 2</h3>
+		<div>
+			Чтобы выровнять содержымое блоков по верхнему краю, нужно применить свойство vertical-align: top; к пунктам меню
+		</div>
+		<div class="nav">
+				<div class="nav__item nav__item_top">Меню 1</div>
+				<div class="nav__item nav__item_top">Меню 2<br>еще текст<br> и еще текст</div>
+				<div class="nav__item nav__item_top">Меню 3</div>
+				<div class="nav__item nav__item_top">Меню 4</div>
+		</div>
+
+		<h3>Шаг 3</h3>
+		<div>
+			Чтобы выровнять содержымое блоков вертикально по центру, нужно применить свойство vertical-align: middle; к пунктам меню
+		</div>
+		<div class="nav">
+				<div class="nav__item nav__item_center">Меню 1</div>
+				<div class="nav__item nav__item_center">Меню 2<br>еще текст<br> и еще текст</div>
+				<div class="nav__item nav__item_center">Меню 3</div>
+				<div class="nav__item nav__item_center">Меню 4</div>
+		</div>
+
+
+		<h4>
+			Это не все способы, а только часть, в осномом я их использовал. flexbox все эти вопросы закрывает, но это тоже часто используеться
+		</h4>
+</body>
+</html>
