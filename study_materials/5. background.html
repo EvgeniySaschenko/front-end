@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h2>1. background-color - определяет цвет фона элемента</h2>
+	<div>Зададим цвет каждому элементу</div>
+	<style>
+		.social-btn-1{
+			display: inline-block;
+		}
+
+		.social-btn__item-1{
+			display: inline-block;
+			height: 30px;
+			width: 30px;
+		}
+
+		.social-btn__item_fb-1{
+			background-color: #3B5999;
+		}
+
+		.social-btn__item_vk-1{
+			background-color: #42678E;
+		}
+
+		.social-btn__item_gg-1{
+			background-color: #D44332;
+		}
+
+	</style>
+	<div class="social-btn">
+		<span class="social-btn-1__item social-btn-1__item_fb"></span>
+		<span class="social-btn-1__item social-btn-1__item_vk"></span>
+		<span class="social-btn-1__item social-btn-1__item_gg"></span>
+	</div>
+
+	<h2>2. background-image - устанавливает фоновое изображение для элемента</h2>
+	<div>
+		Зададим изображение для каждого элемента
+		<ol>
+			<li> я использовал изображения с прозрачным фоном, поэтому виден фон который задан с помощью background-color </li>
+			<li> background-image всегда находится поверх background-color </li>
+			<li> изображения поместились не полностью в контейнеры т.к. размер контейнера 30*30, а фактический размер изображения 80*80 </li>
+		</ol>
+	</div>
+
+	
+	<style>
+			.social-btn-2{
+				display: inline-block;
+			}
+	
+			.social-btn-2__item{
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+			}
+			.social-btn-2__item_fb{
+				background-color: #3B5999;
+				background-image: url(5/fb.png);
+			}
+	
+			.social-btn-2__item_vk{
+				background-color: #42678E;
+				background-image: url(5/vk.png);
+			}
+	
+			.social-btn-2__item_gg{
+				background-color: #D44332;
+				background-image: url(5/gg.png);
+			}
+
+		</style>
+
+	<div class="social-btn-2">
+		<span class="social-btn-2__item social-btn-2__item_fb"></span>
+		<span class="social-btn-2__item social-btn-2__item_vk"></span>
+		<span class="social-btn-2__item social-btn-2__item_gg"></span>
+	</div>
+
+	<h2>3. <a href="http://htmlbook.ru/css/background-size"> background-size </a> - масштабирует фоновое изображение согласно заданным размерам </h2>
+	<div>
+		Чтобы изображения поместились внутирь используем background-size, и разсмотрим примеры как повёдёт сябя фоновое изображение при разных значениях
+	</div>
+
+	<style>
+			.social-btn-3{
+				margin: 30px 0;
+			}
+	
+			.social-btn-3__item{
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+			}
+	
+			.social-btn-3__item_fb{
+				background-color: #3B5999;
+				background-image: url(5/fb.png);
+			}
+
+			.social-btn-3__item_vk{
+				background-color: #42678E;
+				background-image: url(5/vk.png);
+			}
+	
+			.social-btn-3__item_gg{
+				background-color: #D44332;
+				background-image: url(5/gg.png);
+			}
+
+			
+			/* 
+				чтобы 3 раза для примеров не дублировать код который выше я создам дополнительный класс,
+				это же свойство я мог прописать как к "social-btn-3__item" так и к .social-btn-3__item_vk | fb | gg 
+			*/
+			.social-btn-3__item_cover{
+				background-size: cover; 
+			}
+			.social-btn-3__item_contain{
+				background-size: contain; 
+			}
+			.social-btn-3__item_size{
+				background-size: 25px 25px; 
+			}
+		</style>
+
+
+	<p>
+		<b>contain</b> - это свойство масштабирует изображение так чтобы оно полностью поместилось в контейнер - в данном всё смотрится норм, <br>
+		но если бы изображение было меньше контейнера оно бы по центру не стояло
+	</p>
+	<!--contain-->
+	<div class="social-btn-3">
+			<span class="social-btn-3__item social-btn-3__item_fb social-btn-3__item_contain"></span>
+			<span class="social-btn-3__item social-btn-3__item_vk social-btn-3__item_contain"></span>
+			<span class="social-btn-3__item social-btn-3__item_gg social-btn-3__item_contain"></span>
+	</div>
+	
+	<p>
+		<b>cover</b> - это свойство масштабирует изображение так чтобы оно полностью поместилось в контейнер - в данном всё смотрится норм, 
+		но если бы изображение было меньше контейнера оно бы по центру не стояло<br>
+		еслибы изображение былобы не квадратным - 80*80, a наример 100*160 - оно бы смасштабировалось по высоте, но по ширине обрезалось бы<br>
+	</p>
+	<!--cover-->
+	<div class="social-btn-3">
+			<span class="social-btn-3__item social-btn-3__item_fb social-btn-3__item_cover"></span>
+			<span class="social-btn-3__item social-btn-3__item_vk social-btn-3__item_cover"></span>
+			<span class="social-btn-3__item social-btn-3__item_gg social-btn-3__item_cover"></span>
+	</div>
+
+		<p>
+			<b>задать размеры</b> - это свойство смасштабирует изображение согласно заданным размерам<br>
+			я задал  25 * 25 чтобы было видно что фон дублируеться чтобы заполнить контейнер, так происходит с cover и contain если изображение маленькое<br>
+		</p>
+	<!--size-->
+	<div class="social-btn-3">
+			<span class="social-btn-3__item social-btn-3__item_fb social-btn-3__item_size"></span>
+			<span class="social-btn-3__item social-btn-3__item_vk social-btn-3__item_size"></span>
+			<span class="social-btn-3__item social-btn-3__item_gg social-btn-3__item_size"></span>
+	</div>
+
+	<h2>4. background-repeat -  определяет, как будет повторяться фоновое изображение </h2>
+		<ol>
+			<li> продолжым с примером там где я использовал background-size: 25px 25px </li>
+			<li> я укажу чтобы изображение не повторялось с помощью background-repeat: no-repeat </li>
+			<li> но возникает проблема изображение не по центру! </li>
+		</ol>
+
+	<style>
+			.social-btn-4{
+				margin: 30px 0;
+			}
+	
+			.social-btn-4__item{
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+				background-size: 25px 25px; /* 25px*25px */
+				background-repeat: no-repeat; /* no-repeat */
+			}
+	
+			.social-btn-4__item_fb{
+				background-color: #3B5999;
+				background-image: url(5/fb.png);
+			}
+
+			.social-btn-4__item_vk{
+				background-color: #42678E;
+				background-image: url(5/vk.png);
+			}
+	
+			.social-btn-4__item_gg{
+				background-color: #D44332;
+				background-image: url(5/gg.png);
+			}
+	
+	</style>
+
+	<div class="social-btn-4">
+			<span class="social-btn-4__item social-btn-4__item_fb"></span>
+			<span class="social-btn-4__item social-btn-4__item_vk"></span>
+			<span class="social-btn-4__item social-btn-4__item_gg"></span>
+	</div>
+
+	<h2>5. background-position - задает начальное положение фонового изображения </h2>
+		<ol>
+			<li> чтобы расположить изображение по центру, укажим background-position: 50% 50% - т.е. мы сдвинули изображение по осям X и Y на 50% относительно центра изображения (если вспомнить position: - там мы отталкиваемся от края) </li>
+		</ol>
+
+	<style>
+			.social-btn-5{
+				margin: 30px 0;
+			}
+	
+			.social-btn-5__item{
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+				background-size: 25px 25px; /* 25px*25px */
+				background-repeat: no-repeat; /* no-repeat */
+				background-position: 50% 50%; /*50% 50% */
+			}
+	
+			.social-btn-5__item_fb{
+				background-color: #3B5999;
+				background-image: url(5/fb.png);
+			}
+
+			.social-btn-5__item_vk{
+				background-color: #42678E;
+				background-image: url(5/vk.png);
+			}
+	
+			.social-btn-5__item_gg{
+				background-color: #D44332;
+				background-image: url(5/gg.png);
+			}
+	
+	</style>
+
+	<div class="social-btn-5">
+			<span class="social-btn-5__item social-btn-5__item_fb"></span>
+			<span class="social-btn-5__item social-btn-5__item_vk"></span>
+			<span class="social-btn-5__item social-btn-5__item_gg"></span>
+	</div>
+
+
+	<h2>6. background-position - и спрайты </h2>
+		<ol>
+			<li>до этого в качестве фонового изображения мы использовали отдельное изображение для каждой кнопки, спрайт это много изображений скленных в одно</li>
+			<li>спрайты уменьшают количество запросов к серверу +  централизация в CSS, только есть существенный недостаток не получится масштабировать изображение (background-size) <br>
+				- т.е. какого размера оно в спрайте такого и в браузере</li>
+			<li>кординаты нужного участка изображения задаются с помощью background-position - расчёт от верхнего левого угла картинки, сейчас используется изображение 80*500</li>
+		</ol>
+
+	<style>
+			.social-btn{
+				margin: 30px 0;
+			}
+	
+			.social-btn__item{
+				display: inline-block;
+				height: 80px;
+				width: 80px;
+				background-repeat: no-repeat; /* no-repeat */
+				background-image: url(5/social-btn.png); /* sprite */
+			}
+	
+			.social-btn__item_fb{
+				background-color: #3B5999;
+				background-position: 0 0; /* верхний левый угол картинки */
+			}
+
+			.social-btn__item_vk{
+				background-color: #42678E;
+				background-position: -250px 0; /* перемещение в лево по картинке на 250px */
+			}
+	
+			.social-btn__item_gg{
+				background-color: #D44332;
+				background-position: -160px 0; /* перемещение в лево по картинке на 160px */
+			}
+	</style>
+
+	<div class="social-btn">
+			<span class="social-btn__item social-btn__item_fb"></span>
+			<span class="social-btn__item social-btn__item_vk"></span>
+			<span class="social-btn__item social-btn__item_gg"></span>
+	</div>
+
+</body>
+</html>
