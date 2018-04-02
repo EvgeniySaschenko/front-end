@@ -1,0 +1,44 @@
+.article{
+	padding: 10px;
+	color: #708090;
+	line-height: 1.5;
+}
+
+.article__title{
+	text-align: center;
+	color: #FFA500;
+}
+
+.article__title_1{
+	font-size: 25px;
+}
+
+.article__title_2{
+	font-size: 20px;
+}
+
+.article__list-term{
+	font-size: 18px;
+	font-weight: 700;
+	padding-bottom: 10px;
+}
+
+.article__list-def{
+	margin-bottom: 10px;
+}
+
+.article__class{
+	font-weight: 700;
+}
+
+.article__class_bl{
+	color: #A52A2A;
+}
+
+.article__class_el{
+	color: #8A2BE2;
+}
+
+.article__class_mod{
+	color: #006400;
+}

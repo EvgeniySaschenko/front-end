@@ -1,0 +1,28 @@
+/* Блок */
+.social-btn{
+	margin: 30px 0;
+}
+/* Элемент */
+.social-btn__item{
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+/* Модификатор */
+.social-btn__item_fb{
+	background-color: #3B5999;
+	background-image: url(fb.png);
+}
+
+.social-btn__item_vk{
+	background-color: #42678E;
+	background-image: url(vk.png);
+}
+
+.social-btn__item_gg{
+	background-color: #D44332;
+	background-image: url(gg.png);
+}

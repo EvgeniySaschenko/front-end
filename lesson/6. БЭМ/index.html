@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<title>БЭМ</title>
+</head>
+<body>
+	<header class="header">
+		<div class="title title_1">БЭМ</div>
+	</header>
+	<main class="main">
+
+		<h1 class="title title_1"> Что такое БЭМ?</h1>
+		<!--article-->
+		<article class="article">
+			<p class="article__text"> БЭМ (Блок, Элемент, Модификатор) - это подход который даёт рекомендации к тому как называть классы и систематизировать данные. </p>
+
+			<p class="article__text">
+				Если блок который показывается при ошибке должен содржать красный текст его стоит назвать <b>.error</b>, a не <b>.red-text</b>.
+			</p>
+
+			<p class="article__text">1. Название блока характеризует смысл («что это?» — «меню»: menu, «кнопка»: button), а не состояние («какой, как выглядит?» — «красный»: red, «большой»: big). </p>
+
+			<p class="article__text">2. Блок не должен влиять на свое окружение, т. е. блоку не следует задавать внешнюю геометрию (в виде отступов, границ, влияющих на размеры) и позиционирование. </p>
+
+			<p class="article__text">3. В CSS по БЭМ также не рекомендуется использовать селекторы по тегам или id. </p>
+
+			<p class="article__text">4. Блоки могут содержать другие блоки - к примеру в блоке <b>.article</b> находится блок <b>.social-btn</b>. Нужно смотреть по ситуации когда создавать новый блок, а когда когда можно дополнять старый, ниже в документе будет список определений - его можно было вынести вновый блок либо продолжыть в article.</p>
+
+			<p class="article__text">Простой пример использования БЭМ - кнопки соц. сетей: </p>
+
+			<div class="social-btn">
+					<span class="social-btn__item social-btn__item_fb"></span>
+					<span class="social-btn__item social-btn__item_vk"></span>
+					<span class="social-btn__item social-btn__item_gg"></span>
+			</div>
+
+			<h2 class="article__title article__title_2"> Как называть классы? </h2>
+
+			<!--Здесь я использовал список определений-->
+			<dl class="article__list">
+
+				<dt class="article__list-term">
+					Блок
+				</dt>
+				<dt class="article__list-def">
+					Функционально независимый компонент страницы, который может быть повторно использован.<br>
+					Пример <span class="article__class article__class_bl">.article</span> - этот блок можно поставить в любую часть страницы, и это никак не повлияет на его содержымое.
+				</dt>
+
+				<dt class="article__list-term">
+						Элемент
+					</dt>
+				<dt class="article__list-def">
+					Составная часть блока, которая не может использоваться в отрыве от него.<br>
+					Имя элемента отделяется от имени блока двумя подчеркиваниями (__)<br>
+					Пример <span class="article__class article__class_el">.article__text</span> - если этот элемент вытянуть из блока и поставить гдето на странице, он поменяет цвет т.к. я определил цвет текста для блока <span class="article__class article__class_bl">.article</span>.
+				</dt>
+			</dl>
+
+			<dt class="article__list-term">
+					Модификатор
+				</dt>
+			<dt class="article__list-def">
+				Cущность, определяющая внешний вид, состояние или поведение блока либо элемента.<br>
+				Имя модификатора отделяется от имени блока или елемента доним подчеркиванием (_)<br>
+				Пример: я определил что все элементы с классом <span class="article__class article__class_el">.article__class</span> должны быть жырными, но в тоже время я захотел выделять своим цветом класс в зависимости от назначения (Блок, Элемент, Модификатор), для этого я создал классы модификаторы которые меняют цвет текста 
+				<span class="article__class article__class_mod">.article__class_bl</span>, 
+				<span class="article__class article__class_mod">.article__class_el</span>,
+				<span class="article__class article__class_mod">.article__class_mod</span><br>
+				Обрати внимание - что элементу одновременно применяются 2 класса 1-й делает его жирным, 2-й - модификатор меняет его цвет.
+			</dt>
+		</dl>
+		
+
+		<h2 class="article__title article__title_2"> Как систематизировать данные? </h2>
+
+		<p class="article__text"> В папке <b>block</b> создаются папки с таким же названием как и как у блока в CSS, в этих папках хранятся ресурсы данного блока (CSS, JS, каринки, миксины) CSS, JS и  миксины принято называть также как и блок. Такая систематизация позволяет очень быстро находить то что нужно</p>
+		</article>
+		<!--article-->
+
+	</main>
+</body>
+</html>
