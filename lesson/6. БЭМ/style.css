@@ -1,6 +1,8 @@
 @import 'block/common/common.css';
 
-@import 'block/article/article.css';
+@import 'block/main/main.css';
 @import 'block/header/header.css';
+@import 'block/footer/footer.css';
+@import 'block/article/article.css';
 @import 'block/social-btn/social-btn.css';
 @import 'block/title/title.css';
