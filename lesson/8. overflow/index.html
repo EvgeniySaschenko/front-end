@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.container{
+			max-width: 800px;
+			margin: 0 auto;
+		}
+	</style>
+
+
+	<div class="container">
+		<h2> overflow: hidden; - обрезает содержымое контейнера если оно не помещаеться во внутирь</h2>
+		<p>Есть блок 200px x 200px, в него помещена картинка</p>
+		<!--overflow не задан-->
+		<style>
+			.img-box_1{
+				width: 200px;
+				height: 200px;
+				border: 3px solid red;
+				margin-bottom: 40px;
+			}
+		</style>
+		<p>здесь overflow не задан </p>
+		<div class="img-box_1">
+			<img src="1.jpg" alt="">
+		</div>
+
+
+		<style>
+				.img-box_2{
+					width: 200px;
+					height: 200px;
+					border: 3px solid red;
+					overflow: hidden;
+				}
+			</style>
+			<p>здесь задан overflow: hidden; </p>
+			<div class="img-box_2">
+				<img src="1.jpg" alt="">
+			</div>
+
+		
+	</div>
+
+</body>
+</html>

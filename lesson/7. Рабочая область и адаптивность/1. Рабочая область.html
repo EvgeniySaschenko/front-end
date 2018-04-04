@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Рабочая область</title>
+</head>
+<body>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrapper{
+			background: #AFEEEE;
+		}
+
+		.container{
+			max-width: 1170px; /* задаёт максимальный размер рабочей области */
+			margin: 0 auto; /* выравнивете по центру */
+			padding: 0 10px; /* делает отступ от левого и правого края - чтобы на маленьких расшырениях контент не касался края */
+		}
+
+		.header,
+		.main,
+		.footer{
+			background-color: gold;
+			margin-bottom: 10px;
+		}
+
+		.header{
+			min-height: 200px;
+		}
+
+		.main{
+			min-height: 800px;
+		}
+		
+		.footer{
+			min-height: 200px;
+		}
+	</style>
+
+	<div class="wrapper">
+
+		<header class="header container"> HEADER </header>
+
+		<main class="main container">
+			<p>
+					<b>.wrapper</b> - это общий блок для всех контейнеров сайта, через него задыётся фон сайта 
+			</p>
+			
+			<p>
+					<b>.container</b> - определяет размере рабочей области, и выравнивает блоки по центру
+			</p>
+
+		</main>
+
+		<footer class="footer container">FOOTER</footer>
+	</div>
+
+</body>
+</html>

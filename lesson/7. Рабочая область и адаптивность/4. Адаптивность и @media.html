@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.container{
+			max-width: 800px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}
+	</style>
+
+	<div class="container">
+
+		<style>
+			.header{
+				text-align-last: justify; /* равномерно распределяет вложенные блоки по всей ширине */
+			}
+
+			.advertising{
+				display: inline-block;
+				width: 30%;
+				min-height: 100px;
+				background-color: gold;
+				margin-bottom: 50px;
+			}
+
+			@media(max-width: 700px){
+				.advertising{
+					width: 100%;
+				}
+			}
+
+		</style>
+		<h2> Медиа заросы @media </h2>
+		<p>
+				Всем блокам задана ширина 30% - поэтому они могут стоять в одном ряду<br>
+				если ширина окна становится меньше 700px, ширина блоков меняется на 100% и они становятся друг под друга
+		</p>
+		<header class="header">
+			<div class="advertising advertising_1">
+				Рекламный блок 1
+			</div>
+
+			<div class="advertising advertising_2">
+					Рекламный блок 2
+			</div>
+
+			<div class="advertising advertising_3">
+				Рекламный блок 3
+			</div>
+
+		</header>
+
+
+	</div>
+
+
+</body>
+</html>

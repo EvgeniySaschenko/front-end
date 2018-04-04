@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.container{
+			max-width: 800px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}
+	</style>
+
+	<div class="container">
+
+		<style>
+			.advertising{
+				display: inline-block;
+				min-width: 50%;
+				max-width: 600px;
+				min-height: 100px;
+				background-color: gold;
+				margin-bottom: 50px;
+			}
+			
+		</style>
+		<h2> Адаптивность + задание ширины в процентах </h2>
+		<p>
+				min-width: 50%; - по умолчанию он занимает половину контейнера <br>
+				max-width: 600px; - может растянутся максимум до 600px - если текста будет много <br>
+				min-height: 100px; - по высоте минимум занимает 100px и может растягиватся вниз до бесконечности <br>
+		</p>
+		<header class="header">
+			<p>мало текста</p>
+			<div class="advertising advertising_1">
+				Рекламный блок - мало текста
+			</div>
+			<p>много текста</p>
+			<div class="advertising advertising_1">
+					Рекламный блок - <b> много текста</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus blanditiis modi ut necessitatibus debitis temporibus perspiciatis fuga cum, nulla quas alias eaque dolores voluptatibus sed. Eos nostrum non maiores saepe possimus autem eveniet atque sapiente ad porro velit, corporis assumenda ratione ab ipsa aliquam. Quidem modi mollitia nam necessitatibus aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus blanditiis modi ut necessitatibus debitis temporibus perspiciatis fuga cum, nulla quas alias eaque dolores voluptatibus sed. Eos nostrum non maiores saepe possimus autem eveniet atque sapiente ad porro velit, corporis assumenda ratione ab ipsa aliquam. Quidem modi mollitia nam necessitatibus aspernatur?
+				</div>
+		</header>
+
+
+	</div>
+
+
+</body>
+</html>

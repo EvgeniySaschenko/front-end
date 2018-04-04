@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.container{
+			max-width: 800px;
+			margin: 0 auto;
+		}
+	</style>
+
+	<div class="container">
+			<h2>1. У нас есть блок 200px на 200px, высота блока указана через min-height, а ширина задана жестко через width</h2>
+
+			<style>
+				.block_1{
+					width: 200px;
+					min-height: 200px;
+					background-color: gold;
+					margin-bottom: 30px;
+				}
+			</style>
+
+			<p>Мало текста min-height</p>
+			<div class="block_1">
+				Мало текста
+			</div>
+			<p>Много текста min-height</p>
+			<div class="block_1">
+					<b>Много текста - блок растянется вниз т.к. высота у него фиксирована не жёстко</b>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde magni at velit illum! Quas libero labore dicta a rerum, obcaecati rem deserunt veniam officia, fuga magni quaerat nostrum itaque neque. Quas libero labore dicta a rerum, obcaecati rem deserunt veniam officia, fuga magni quaerat nostrum itaque neque.
+			</div>
+
+
+			<h3> Что будет если задать всё жестко т.е.  через height и width?</h3>
+			<style>
+					.block_2{
+						width: 200px;
+						height: 200px;
+						background-color: gold;
+						margin-bottom: 30px;
+					}
+			</style>
+
+			<p>Много текста height</p>
+			<div class="block_2">
+					<b>Много текста - текст полез за границы блока</b>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde magni at velit illum! Quas libero labore dicta a rerum, obcaecati rem deserunt veniam officia, fuga magni quaerat nostrum itaque neque. Quas libero labore dicta a rerum, obcaecati rem deserunt veniam officia, fuga magni quaerat nostrum itaque neque.
+			</div>
+
+
+	</div>
+
+
+</body>
+</html>
